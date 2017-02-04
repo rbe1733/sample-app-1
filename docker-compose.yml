@@ -1,0 +1,9 @@
+version: '2'
+services:
+  db:
+    image: mongo:3.2
+  app:
+    build: node-app
+    ports:
+      - "80:80"
+
