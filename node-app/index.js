@@ -3,6 +3,7 @@ var app = express();
 var mongodb = require('mongodb');
 var port = 80;
 var morgan = require('morgan');
+var bodyParser = require('body-parser');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json()); // parse application/json
