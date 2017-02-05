@@ -2,6 +2,7 @@ var express  = require('express');
 var app = express();
 var mongodb = require('mongodb');
 var port = 80;
+var morgan = require('morgan');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json()); // parse application/json
