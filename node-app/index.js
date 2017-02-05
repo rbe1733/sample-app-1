@@ -31,10 +31,15 @@ app.get('/', function(req, res) {
     if (err) {
       console.log('Failed connection to MongoDB', err);
     } else {
-      res.body = db.collection('contenu').find(function(error, result) {
-        res.contentType('application/json');
-        res.status(200);
-        res.json(result);
+      res.body = db.collection('contenu').find({}, function(error, result) {
+        if (error) {
+          console.log(error);
+          res.status(400);
+        } else {
+          res.contentType('application/json');
+          res.status(200);
+          res.json(result);
+        }
       });
     }
   });
