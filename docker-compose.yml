@@ -1,9 +1,8 @@
-version: '2'
+version: '3'
 services:
-  db:
-    image: mongo:3.2
   app:
-    build: node-app
+    image: jpgouigoux/sample-app-1:1.0
     ports:
       - "8080:80"
-
+  db:
+    image: mongo:3.2
