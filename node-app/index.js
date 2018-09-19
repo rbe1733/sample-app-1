@@ -42,7 +42,7 @@ app.post('/', function(req, res) {
         } else {
           db.collection('contenu').update({}, { $inc: { value: 1 } });
           res.status(200);
-          res.send('\nIncr√©ment K\n');
+          res.send('Incrementation : OK\n');
         }
       });
     }
@@ -61,7 +61,7 @@ app.get('/', function(req, res) {
           res.send(error);
         } else {
           res.status(200);
-          res.send('\nIncr√ment='+result.value.toString()+'\n');
+          res.send('\Result='+result.value.toString()+'\n');
         }
       });
     }
